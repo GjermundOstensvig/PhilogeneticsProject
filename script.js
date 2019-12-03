@@ -54,9 +54,9 @@ function getData(){
     if (xhr.readyState == 4 && xhr.status == 200) {
     //alert(xhr.responseText);
     var response1 = JSON.parse(xhr.responseText);
-    document.getElementById("occurrence_no").innerHTML = response1.records[0].oid;
-    document.getElementById("record_type").innerHTML = response1.records[0].rnk;
-    document.getElementById("reid_no").innerHTML = response1.records[0].nam;
+    document.getElementById("orig_no").innerHTML = response1.records[0].oid;
+    document.getElementById("taxon_no").innerHTML = response1.records[0].rnk;
+    document.getElementById("record_type").innerHTML = response1.records[0].nam;
     }
   }
 }
