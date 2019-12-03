@@ -45,21 +45,18 @@ function drawTree(startX,startY,level){
 }
 
 function getData(){
-  var Url = "https://www.paleobiodb.org/data1.2/occs/list.txt?rowcount&taxon_name=Stegosauridae";
+  var Url = "https://www.paleobiodb.org/data1.2/taxa/single.json?name=Dascillidae&show=attr";
   var xhr = new XMLHttpRequest();
   xhr.open('GET', Url, true);
   xhr.send();
   xhr.onreadystatechange = processRequest;
   function processRequest(e){
     if (xhr.readyState == 4 && xhr.status == 200) {
-    alert(xhr.responseText);
-    /*var response1 = JSON.parse(xhr.responseText);
-    document.getElementById("occurrence_no").innerHTML = response1.occurrence_no;
-    document.getElementById("record_type").innerHTML = response1.record_type;
-    document.getElementById("reid_no").innerHTML = response1.reid_no;*/
+    //alert(xhr.responseText);
+    var response1 = JSON.parse(xhr.responseText);
+    document.getElementById("occurrence_no").innerHTML = response1.records[0].oid;
+    document.getElementById("record_type").innerHTML = response1.records[0].rnk;
+    document.getElementById("reid_no").innerHTML = response1.records[0].nam;
     }
+  }
 }
-
-
-}
-////////
