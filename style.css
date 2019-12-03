@@ -1,0 +1,11 @@
+#tree{
+  position: relative;
+  left: 20;
+  border-style: solid;
+}
+
+#table{
+  position: relative;
+  top: 20;
+  left: 20;
+}
